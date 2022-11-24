@@ -1,0 +1,126 @@
+$light: #ececec;
+$dark: #00004e;
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100vw;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.card {
+  text-align: center;
+}
+
+.bg-shadow {
+  background-color: transparentize(#000, 0.5);
+}
+
+.weather-info {
+  min-width: 200px;
+  max-width: 300px;
+  border: 2px solid $dark;
+  margin: 0.5rem 0;
+
+  h4,
+  p {
+    margin: 2px 0;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .card-header {
+    background-color: lighten($dark, 75);
+  }
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+a {
+  color: $light;
+  text-decoration: none;
+  &:hover {
+    color: darken($light, 20);
+  }
+}
+
+.router-link-active {
+  text-decoration: underline;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 8px;
+}
+
+h3.loading {
+  font-size: 3rem;
+  width: 10rem;
+  color: $dark;
+  &:after {
+    animation: ellipsis 1s infinite;
+    content: "";
+  }
+
+  @keyframes ellipsis {
+    25% {
+      content: ".";
+    }
+    50% {
+      content: "..";
+    }
+    75% {
+      content: "...";
+    }
+  }
+}
+
+@for $i from 1 through 20 {
+  .h-#{$i * 5} {
+    height: $i * 5%;
+  }
+}
+
+@for $i from 1 through 20 {
+  .w-#{$i * 5} {
+    width: $i * 5%;
+  }
+}
+
+@for $i from 1 through 20 {
+  .vh-#{$i * 5} {
+    height: $i * 5vh;
+  }
+}
+
+@for $i from 1 through 20 {
+  .vw-#{$i * 5} {
+    width: $i * 5vw;
+  }
+}
+
+@for $i from 1 through 20 {
+  .min-vh-#{$i * 5} {
+    min-height: $i * 5vh;
+  }
+}
